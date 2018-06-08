@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    tools:context="com.test.twitterginosi.MainActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.twitter.sdk.android.core.identity.TwitterLoginButton
+            android:id="@+id/twitter_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <Button
+            android:id="@+id/twitter_signout"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_out"
+            android:theme="@style/ThemeOverlay.DarkButton"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/get_tweets"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:textAllCaps="false"
+        android:text="@string/twitts_history" />
+
+    <Button
+        android:id="@+id/tweet_from_camera"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="122dp"
+        android:textAllCaps="false"
+        android:text="@string/twit_from_camera" />
+
+    <Button
+        android:id="@+id/tweet_from_gallery"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="182dp"
+        android:textAllCaps="false"
+        android:text="@string/twit_from_storage"/>
+
+    <TextView
+        android:id="@+id/network_message"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250dp"
+        android:textAllCaps="false"
+        android:text=""/>
+
+</RelativeLayout>

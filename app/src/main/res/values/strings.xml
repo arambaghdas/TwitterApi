@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TwitterGinosi</string>
+    <string name = "twitter_consumer_key">ZpUeo4u2WD2ZyfCvNhMDV0bHb</string>
+    <string name= "twitter_consumer_secret">fDcwmqsswDjQrMvR500XHRYkYF7sEBJKoEZDE4EhTiCuq1FLqa</string>
+    <string name= "twitter_access_token">1004026825037762562-zpltVHIauF2pY6RD87iJ3JKDjrfJXq</string>
+    <string name= "twitter_access_token_secret">hhny0pVUOWrFyz8wGzcLYci6mEDwqyvVrTM8w1IUvY9vB</string>
+    <string name= "twitter_post_success">Tweet was posted successfully</string>
+    <string name= "twitter_post_fail">Tweet was failed</string>
+    <string name= "photo_load_error">Photo file cannot be created, please try again</string>
+    <string name= "sign_out">Sign Out</string>
+    <string name= "loading">Loading</string>
+    <string name= "network_error">No network connection is available</string>
+    <string name= "install_twitter">Please install Twitter application and try again</string>
+    <string name= "twitts_history">Tweets History</string>
+    <string name= "twit_from_camera">Tweet From Camera</string>
+    <string name= "twit_from_storage">Tweet From Storage</string>
+</resources>
