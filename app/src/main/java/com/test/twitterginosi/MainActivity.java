@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         twitterLogin.setEnabled(true);
+        // Login via Twitter application
         twitterLogin.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             showNetworkConnMess();
         }
     }
+    // Open native camera application
     private void startCameraIntent() {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (cameraIntent.resolveActivity(getPackageManager()) != null) {
@@ -150,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             showNetworkConnMess();
         }
     }
+    // Open gallery for choosing image
     private void startGalleryIntent() {
         Intent pickerPhotoIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(pickerPhotoIntent, REQUEST_PICTURE_FROM_GALLERY);
@@ -161,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
         disableButtons();
     }
 
+    //Initialize Twitter SDK
     private void initTwitter() {
         String CONSUMER_KEY = getResources().getString(R.string.twitter_consumer_key);
         String CONSUMER_SECRET = getResources().getString(R.string.twitter_consumer_secret);
@@ -186,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
             twitterLogin.onActivityResult(requestCode, resultCode, data);
         }
     }
+    // Post image in the Twitter
     private void postInTwitter(Uri imageUri) {
          Intent intent = new ComposerActivity.Builder(MainActivity.this)
                 .session(TwitterCore.getInstance().getSessionManager().getActiveSession())
@@ -193,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
                 .createIntent();
            startActivity(intent);
     }
+    // Run firebase job scheduler for getting event in case of network is available
     private void scheduleNetworkTask() {
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(getBaseContext()));
         Job myJob = dispatcher.newJobBuilder()
@@ -222,8 +228,8 @@ public class MainActivity extends AppCompatActivity {
                 showNetworkConnMess();
         }
     }
-
-    private   boolean isPermissionGranted(String permission) {
+    // Check permission in run time
+    private  boolean isPermissionGranted(String permission) {
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
                 return true;
@@ -280,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
             networkMessage.setText("");
         }
     }
-
+    // Register broadcast for network change  event
     private void registerNetworkReceiver() {
         try {
             IntentFilter intentFilter = new IntentFilter();
